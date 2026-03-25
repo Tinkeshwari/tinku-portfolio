@@ -3,47 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tinku's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinku Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Background animation -->
-    <div class="background"></div>
+    <header>
+        <h1>L. Tinkeshwari</h1>
+        <img src="images/myphoto.jpg" alt="My Photo" class="profile-photo">
+        <p>BCA Semester 2 Student | Web Developer</p>
+    </header>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <img src="images/myphoto.jpg" alt="Tinku's Photo" class="profile-photo">
-        <h1>L. Tinkeshwari (Tinku)</h1>
-        <p>BCA Semester 2 Student | Web Development Enthusiast</p>
-        <a href="https://www.linkedin.com/in/tinkeshwariloganathan" target="_blank">LinkedIn</a>
+    <section class="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Tinku. I am a passionate web developer and BCA student. Welcome to my portfolio.</p>
     </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates">
+    <section class="certificates">
         <h2>Certificates</h2>
-        <ul>
-            <li onclick="showCertificate('CSS3')">CSS3</li>
-            <li onclick="showCertificate('HTML5')">HTML5</li>
-            <li onclick="showCertificate('JavaScript')">JavaScript</li>
-            <li onclick="showCertificate('GitHub')">GitHub</li>
-            <li onclick="showCertificate('MongoDB')">MongoDB & Document Model</li>
-            <li onclick="showCertificate('Digital Engineering')">Digital Engineering</li>
-            <li onclick="showCertificate('Node.js')">Node.js</li>
-        </ul>
-        <div id="certificate-display"></div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div id="form-status"></div>
+        <div class="buttons">
+            <button onclick="showCertificate('css3')">CSS3</button>
+            <button onclick="showCertificate('html5')">HTML5</button>
+            <button onclick="showCertificate('javascript')">JavaScript</button>
+            <button onclick="showCertificate('github')">GitHub</button>
+            <button onclick="showCertificate('mongodb')">MongoDB</button>
+            <button onclick="showCertificate('nodejs')">Node.js</button>
+            <button onclick="showCertificate('digital-engineering')">Digital Engineering</button>
+        </div>
+        <div id="certificate-display">
+            <img id="certificate-img" src="" alt="Certificate" style="display:none;">
+        </div>
     </section>
 
     <script src="script.js"></script>
