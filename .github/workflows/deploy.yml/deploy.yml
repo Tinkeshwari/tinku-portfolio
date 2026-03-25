@@ -8,25 +8,27 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # fixes Node.js 20 deprecation
 
     steps:
-      # Step 1: Checkout repo
+      # Step 1: Checkout repository
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js (optional if you need build tools)
+      # Step 2: Set up Node.js (if you need npm for building)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # Step 3: Install dependencies (optional)
+      # Step 3: Install dependencies (optional if you have package.json)
       - name: Install dependencies
         run: npm install
 
       # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./   # root folder where index.html lives
+          token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./    # where your index.html is located
